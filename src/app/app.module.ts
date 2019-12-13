@@ -4,10 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TestPHPComponent } from './test-php/test-php.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TestPHPComponent
   ],
   imports: [
     BrowserModule,
