@@ -10,6 +10,6 @@ export class PhotosService {
   ) { }
 
   getAlbums() {
-    return this.http.get('https://jsonplaceholder.typicode.com/albums');
+    return this.http.get('http://localhost/mooviProject/albums/photo.php');
   }
 }
