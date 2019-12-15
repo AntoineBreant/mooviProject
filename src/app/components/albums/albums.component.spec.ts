@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestPHPComponent } from './test-php.component';
+import { AlbumsComponent } from './albums.component';
 
-describe('TestPHPComponent', () => {
-  let component: TestPHPComponent;
-  let fixture: ComponentFixture<TestPHPComponent>;
+describe('AlbumsComponent', () => {
+  let component: AlbumsComponent;
+  let fixture: ComponentFixture<AlbumsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestPHPComponent ]
+      declarations: [ AlbumsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TestPHPComponent);
+    fixture = TestBed.createComponent(AlbumsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
