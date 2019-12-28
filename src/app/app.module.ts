@@ -10,13 +10,15 @@ import { ListeFilmComponent } from './components/liste-film/liste-film.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import { FilmComponent } from './components/film/film.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumsComponent,
     PhotosComponent,
-    ListeFilmComponent
+    ListeFilmComponent,
+    FilmComponent
   ],
   imports: [
     BrowserModule,
