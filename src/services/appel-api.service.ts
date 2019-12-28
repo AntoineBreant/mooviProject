@@ -15,7 +15,7 @@ export class AppelApiService {
     return this.http.get(this.film);
   }
 
-  getFilm(idFilm) {
-    return this.http.get('http://localhost/mooviProject/api/film.php?idFilm=1');
-  }
+  // getFilm(idFilm) {
+  //   return this.http.get('http://localhost/mooviProject/api/film.php?idFilm=1');
+  // }
 }

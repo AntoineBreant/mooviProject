@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import {AppelApiService} from 'src/services/appel-api.service';
+import { Component, OnInit } from '@angular/core';
 //import { ActivatedRoute } from '@angular/router';
 
 
@@ -11,17 +11,26 @@ import {AppelApiService} from 'src/services/appel-api.service';
 })
 export class FilmComponent implements OnInit {
 
-  film;
-  filmId;
+  // film;
+  // filmId;
+  // constructor(
+  //   private apiService2: AppelApiService,
+  //   //private route: ActivatedRoute,
+  // ) { }
+
+  // ngOnInit() {
+  //   //this.filmId = this.route.snapshot.params.filmId;
+  //   //this.film=this.apiService.getFilms();
+  //   this.film = this.apiService2.getFilms();
+  // }
+  films;
   constructor(
-    private apiService2: AppelApiService,
-    //private route: ActivatedRoute,
+    public apiService: AppelApiService,
   ) { }
 
+
   ngOnInit() {
-    //this.filmId = this.route.snapshot.params.filmId;
-    //this.film=this.apiService.getFilms();
-    this.film = this.apiService2.getFilms();
+    this.films = this.apiService.getFilms();
   }
 
 }
