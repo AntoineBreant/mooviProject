@@ -1,6 +1,7 @@
 import {AppelApiService} from 'src/services/appel-api.service';
 import { Component, OnInit } from '@angular/core';
-//import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import {Film} from '../../../shared/film';
 
 
 
@@ -11,26 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmComponent implements OnInit {
 
-  // film;
-  // filmId;
-  // constructor(
-  //   private apiService2: AppelApiService,
-  //   //private route: ActivatedRoute,
-  // ) { }
-
-  // ngOnInit() {
-  //   //this.filmId = this.route.snapshot.params.filmId;
-  //   //this.film=this.apiService.getFilms();
-  //   this.film = this.apiService2.getFilms();
-  // }
-  films;
+  film ;
+  filmId;
   constructor(
-    public apiService: AppelApiService,
+    private apiService2: AppelApiService,
+    private route: ActivatedRoute,
   ) { }
 
-
   ngOnInit() {
-    this.films = this.apiService.getFilms();
+    //this.filmId = this.route.snapshot.params.filmId;
+    this.apiService2.getFilm(1).subscribe((data)=> this.film = data);
   }
 
 }

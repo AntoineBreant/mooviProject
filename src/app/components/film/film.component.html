@@ -1,2 +1,1 @@
-<p>{{film.idFilm}}</p>
-<p>{{film.titre}}</p>
+<p *ngIf="film$ | async as film">{{film.titre}}</p>

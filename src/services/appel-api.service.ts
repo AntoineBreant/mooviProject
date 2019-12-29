@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Film } from '../shared/film';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class AppelApiService {
     return this.http.get(this.film);
   }
 
-  // getFilm(idFilm) {
-  //   return this.http.get('http://localhost/mooviProject/api/film.php?idFilm=1');
-  // }
+  getFilm(idFilm) {
+    return this.http.get('http://localhost/mooviProject/api/film.php?idFilm=1');
+  }
 }
