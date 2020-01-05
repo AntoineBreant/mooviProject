@@ -20,8 +20,8 @@ export class FilmComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.filmId = this.route.snapshot.params.filmId;
-    this.apiService2.getFilm(1).subscribe((data)=> this.film = data);
+    this.filmId = this.route.snapshot.params.filmId;
+    this.apiService2.getFilm(this.filmId).subscribe((data)=> this.film = data);
   }
 
 }

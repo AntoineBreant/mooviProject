@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { FilmComponent } from './components/film/film.component';
+import { CommentaireComponent } from './components/commentaire/commentaire.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FilmComponent } from './components/film/film.component';
     AlbumsComponent,
     PhotosComponent,
     ListeFilmComponent,
-    FilmComponent
+    FilmComponent,
+    CommentaireComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <mat-list>
     <div *ngFor="let f of films | async">
-        <mat-list-item>{{f.titre}}</mat-list-item>
+        <a routerLink="/film/{{f.idFilm}}"><mat-list-item>{{f.titre}}</mat-list-item></a>
         <mat-divider></mat-divider>
     </div>
   </mat-list>

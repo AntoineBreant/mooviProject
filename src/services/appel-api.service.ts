@@ -20,4 +20,9 @@ export class AppelApiService {
   getFilm(idFilm) {
     return this.http.get('http://localhost/mooviProject/api/film.php?idFilm=1');
   }
+
+  postComment(comment){
+    return this.http.post('http://localhost/mooviProject/api/commentaire.php',comment);
+  }
+
 }
