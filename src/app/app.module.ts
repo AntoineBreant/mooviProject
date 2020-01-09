@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,9 @@ import {MatListModule} from '@angular/material/list';
 import { FilmComponent } from './components/film/film.component';
 import { CommentaireComponent } from './components/commentaire/commentaire.component';
 import { LoginUserComponent } from './components/login-user/login-user.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import { LoginUserComponent } from './components/login-user/login-user.component
     AppRoutingModule,
     MatDividerModule,
     MatListModule,
+    FormsModule,
+    MatInputModule,
     HttpClientModule,
+    MatButtonModule,
     BrowserAnimationsModule
   ],
   providers: [],

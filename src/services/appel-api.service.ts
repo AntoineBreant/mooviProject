@@ -18,11 +18,19 @@ export class AppelApiService {
   }
 
   getFilm(idFilm) {
-    return this.http.get('http://localhost/mooviProject/api/film.php?idFilm=1');
+    return this.http.get('http://localhost/mooviProject/api/film.php?idFilm='+idFilm);
   }
 
   postComment(comment){
     return this.http.post('http://localhost/mooviProject/api/commentaire.php',comment);
+  }
+
+  login(user){
+    if(user.login=="titi" && user.password=="toto"){
+      return true;
+    }
+    else 
+      return false;
   }
 
 }

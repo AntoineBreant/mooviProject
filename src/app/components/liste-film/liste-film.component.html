@@ -1,6 +1,8 @@
 <mat-list>
     <div *ngFor="let f of films | async">
-        <a routerLink="/film/{{f.idFilm}}"><mat-list-item>{{f.titre}}</mat-list-item></a>
+        <a routerLink="/film/{{f.fil_idFilm}}"><mat-list-item>{{f.fil_nom}}</mat-list-item></a>
         <mat-divider></mat-divider>
     </div>
   </mat-list>
+
+  <p *ngIf="connection.isConnected()">connecté</p>

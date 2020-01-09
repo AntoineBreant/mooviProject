@@ -1,1 +1,16 @@
-<p>login-user works!</p>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+        <mat-form-field>
+            <input matInput placeholder="login" name="login" class="form-control" ngModel>
+        </mat-form-field>
+    </div>
+<br>
+    <div class="form-group">
+        <mat-form-field>
+            <input matInput placeholder="mot de passe"  name="password" class="form-control" ngModel>
+        </mat-form-field>
+    </div>
+<br>
+<button mat-raised-button color="primary" type="submit">Valider</button>
+</form>
+<p *ngIf="badLogin">Mauvais identifiant, veuillez réessayer</p>

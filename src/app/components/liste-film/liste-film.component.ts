@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppelApiService} from 'src/services/appel-api.service';
+import { ConnexionService } from 'src/services/connexion.service';
 
 @Component({
   selector: 'app-liste-film',
@@ -11,10 +12,12 @@ export class ListeFilmComponent implements OnInit {
   films;
   constructor(
     private apiService: AppelApiService,
+    private connection: ConnexionService
   ) { }
 
 
   ngOnInit() {
+    console.log(this.connection.isConnected());
     this.films = this.apiService.getFilms();
   }
 
