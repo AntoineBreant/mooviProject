@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Film } from '../shared/film';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +7,7 @@ import { Observable } from 'rxjs';
 export class AppelApiService {
   chemin:string='http://localhost/mooviProject/api';
   film:string=this.chemin+'/film.php';
+  comment:string=this.chemin+'commentaire.php';
   constructor(
     private http: HttpClient
   ) { }
@@ -18,11 +17,11 @@ export class AppelApiService {
   }
 
   getFilm(idFilm) {
-    return this.http.get('http://localhost/mooviProject/api/film.php?idFilm='+idFilm);
+    return this.http.get(this.film+'?idFilm='+idFilm);
   }
 
   postComment(comment){
-    return this.http.post('http://localhost/mooviProject/api/commentaire.php',comment);
+    return this.http.post(this.comment,comment);
   }
 
   login(user){
