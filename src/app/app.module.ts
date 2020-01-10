@@ -16,6 +16,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PagePrincipaleComponent } from './components/page-principale/page-principale.component';
+import { FiltreRechercheComponent } from './components/filtre-recherche/filtre-recherche.component';
 
 
 
@@ -25,7 +28,10 @@ import {MatSelectModule} from '@angular/material/select';
     ListeFilmComponent,
     FilmComponent,
     CommentaireComponent,
-    LoginUserComponent
+    LoginUserComponent,
+    NavbarComponent,
+    PagePrincipaleComponent,
+    FiltreRechercheComponent
   ],
   imports: [
     BrowserModule,
