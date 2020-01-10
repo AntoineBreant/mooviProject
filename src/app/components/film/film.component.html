@@ -1,4 +1,5 @@
-<p>Film: {{film.fil_nom}}</p>
+<div *ngIf="film"><p>Film: {{film.fil_nom}}</p>
 <p>durée: {{film.fil_duree}}</p>
 <p>résumé: {{film.fil_resume}}</p>
-<p>Film: {{film.fil_nom}}</p>
+</div>
+<app-commentaire></app-commentaire>

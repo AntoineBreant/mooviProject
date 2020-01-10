@@ -7,7 +7,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 export class AppelApiService {
   chemin:string='http://localhost/mooviProject/api';
   film:string=this.chemin+'/film.php';
-  comment:string=this.chemin+'commentaire.php';
+  comment:string=this.chemin+'/commentaire.php';
   constructor(
     private http: HttpClient
   ) { }
@@ -20,6 +20,10 @@ export class AppelApiService {
     return this.http.get(this.film+'?idFilm='+idFilm);
   }
 
+  getComments(idFilm) {
+    return this.http.get(this.comment+'?idFilm='+idFilm);
+  }
+
   postComment(comment){
     return this.http.post(this.comment,comment);
   }
@@ -30,6 +34,10 @@ export class AppelApiService {
     }
     else 
       return false;
+  }
+
+  canComment(idClient,idFilm){
+    return true;
   }
 
 }

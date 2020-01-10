@@ -14,6 +14,9 @@ import { CommentaireComponent } from './components/commentaire/commentaire.compo
 import { LoginUserComponent } from './components/login-user/login-user.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatDividerModule,
     MatListModule,
     FormsModule,
+    MatIconModule,
     MatInputModule,
+    MatSelectModule,
     HttpClientModule,
     MatButtonModule,
     BrowserAnimationsModule
