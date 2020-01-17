@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConnexionService {
 
+  connectedUser= new Subject<Boolean>();
   constructor() { 
   }
 
@@ -23,6 +25,7 @@ export class ConnexionService {
 
   setConnexion(conn:boolean){
     sessionStorage.connected=conn.toString();
+    this.connectedUser.next(conn);
   }
 
   getIdClient(){
