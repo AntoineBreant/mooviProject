@@ -19,16 +19,15 @@
     <h2 class="w3-margin-top-nav w3-margin-left">Résultat de votre recherche :</h2>
     <ul class="w3-ul w3-margin-top w3-padding" *ngFor="let f of films | async">
         <li class="w3-cont w3-row">
-            <img class="w3-col w3-image w3-card-4 w3-round w3-margin" style="width:100%;max-width:250px" src="http://fr.web.img3.acsta.net/medias/nmedia/18/63/30/68/18686447.jpg" />
+            <img class="w3-col w3-image w3-card-4 w3-round w3-margin" style="width:100%;max-width:250px" src="{{f.fil_bandeAnnonce}}" />
             <div class="w3-display-container w3-margin-top" style="height:350px">
                 <h4><b>{{f.fil_nom}}</b></h4>
                 <p class="w3-margin-top w3-margin-bottom" style="text-align: justify;">{{f.fil_resume}}</p>
                 <p><b class="w3-margin-right">Genre :</b>Drame</p>
                 <!-- TO DO rajouter ça-->
-                <p><b class="w3-margin-right">Note :</b>{{f.fil_note}}</p>
+                <p><b class="w3-margin-right">Note :</b>{{f.fil_noteMoyenne}}</p>
                 <button class="w3-btn w3-theme w3-large w3-display-bottomright w3-margin-left">Voir plus<i class="w3-margin-left fa fa-angle-right"></i></button>
             </div>
         </li>
+        <div></div>
     </ul>
-
-</div>
