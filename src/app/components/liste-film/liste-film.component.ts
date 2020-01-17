@@ -18,7 +18,6 @@ export class ListeFilmComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.connection.isConnected());
     this.films = this.apiService.getFilms();
   }
 
