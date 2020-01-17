@@ -25,4 +25,8 @@ export class NavbarComponent implements OnInit {
     console.log("coucou bande de nouilles");
   }
 
+  deconnexion(){
+    this.connection.setConnexion(false);
+  }
+
 }
