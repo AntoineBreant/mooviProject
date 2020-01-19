@@ -15,15 +15,9 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.isConnected);
-    this.connection.connectedUser.subscribe((data)=> this.isConnected = data);
-
+    this.connection.connectedUser.subscribe((data)=>this.isConnected = data);
   }
 
-  update(){
-    this.isConnected=this.connection.isConnected();
-    console.log("coucou bande de nouilles");
-  }
 
   deconnexion(){
     this.connection.setConnexion(false);

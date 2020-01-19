@@ -1,5 +1,7 @@
 <div *ngIf="film"><p>Film: {{film.fil_nom}}</p>
 <p>durée: {{film.fil_duree}}</p>
 <p>résumé: {{film.fil_resume}}</p>
+<button *ngIf="connection" (click)="ajoutPanier()">Ajouter au panier</button>
+
 </div>
 <app-commentaire></app-commentaire>

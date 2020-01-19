@@ -7,9 +7,31 @@ import { Subject } from 'rxjs';
 export class ConnexionService {
 
   connectedUser= new Subject<Boolean>();
-  constructor() { 
-  }
+  constructor() {
+    if(sessionStorage.getItem("connected")!=null){
+      if (sessionStorage.connected=="true"){
+        this.connectedUser.next(true);
+        console.log("user exists");
+      }
+      else{
+        this.connectedUser.next(false);
+        console.log("user does not exist");
+      }
+    }
+   }
 
+   isConnectedSub(){
+     let retour= new Subject<Boolean>();
+    if (sessionStorage.connected=="true"){
+      retour.next(true);
+    }
+    else {
+      retour.next(false);
+    }
+    return retour;
+   }
+
+ 
   isConnected(){
     if (sessionStorage.connected=="true"){
       return true;
