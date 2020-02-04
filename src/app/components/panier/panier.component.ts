@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PanierService } from 'src/services/panier.service';
+import { AppelApiService } from 'src/services/appel-api.service';
 
 @Component({
   selector: 'app-panier',
@@ -8,14 +9,19 @@ import { PanierService } from 'src/services/panier.service';
 })
 export class PanierComponent implements OnInit {
 
-  panier;
+  panierIDs;
+  listefilm=[];
   constructor(
-    private panierService: PanierService
+    private panierService: PanierService,
+    private api: AppelApiService
   ) { }
 
   ngOnInit() {
-    this.panier=this.panierService.listePanier;
-    console.log(sessionStorage.panier);
+    this.panierIDs=this.panierService.listePanier;
+    for(let panierId of this.panierIDs){
+      this.api.getFilm(panierId).subscribe(data=>this.listefilm.push(data));
+    }
+    
   }
 
 }

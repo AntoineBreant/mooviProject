@@ -17,8 +17,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.connection.connectedUser.subscribe((data)=>this.isConnected = data);
   }
-
-
   deconnexion(){
     this.connection.setConnexion(false);
   }
