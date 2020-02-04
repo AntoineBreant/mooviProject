@@ -28,7 +28,6 @@ export class FilmComponent implements OnInit {
   }
 
   ajoutPanier(){
-    if(this.panier.alreadyInThePanier(this.filmId)==false)
       this.panier.addFilmPanier(this.filmId);
   }
 

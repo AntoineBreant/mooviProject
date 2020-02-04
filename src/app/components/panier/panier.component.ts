@@ -15,6 +15,7 @@ export class PanierComponent implements OnInit {
 
   ngOnInit() {
     this.panier=this.panierService.listePanier;
+    console.log(sessionStorage.panier);
   }
 
 }
