@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PanierService {
 
-  listePanier;
+  listePanier=[];
 
   constructor() { 
     console.log(sessionStorage.panier);
@@ -26,6 +26,13 @@ export class PanierService {
       sessionStorage.panier=JSON.stringify(this.listePanier);
 
   }
+
+  // isEmpty(){
+  //   if(this.listePanier.length==0)
+  //     return true;
+  //   else
+  //     return false;
+  // }
 
   removeFilmPanier(idFilm:number){
     this.listePanier.splice( this.listePanier.indexOf(idFilm), 1 );

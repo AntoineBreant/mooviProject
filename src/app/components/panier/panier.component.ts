@@ -9,8 +9,9 @@ import { AppelApiService } from 'src/services/appel-api.service';
 })
 export class PanierComponent implements OnInit {
 
-  panierIDs;
+  panierIDs=[];
   listefilm=[];
+  nonDisplayable=[];
   constructor(
     private panierService: PanierService,
     private api: AppelApiService
@@ -20,8 +21,12 @@ export class PanierComponent implements OnInit {
     this.panierIDs=this.panierService.listePanier;
     for(let panierId of this.panierIDs){
       this.api.getFilm(panierId).subscribe(data=>this.listefilm.push(data));
-    }
-    
+    }  
+  }
+
+  supprimer(idFilm){
+    this.nonDisplayable.push(idFilm);
+    this.panierService.removeFilmPanier(idFilm);
   }
 
 }
