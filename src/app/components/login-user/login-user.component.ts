@@ -15,7 +15,7 @@ export class LoginUserComponent implements OnInit {
 
   loginForm;
   badLogin=false;
-  doesExist: boolean;
+  doesExist: any;
   constructor(
     private apiService: AppelApiService,
     private router: Router,
@@ -28,15 +28,19 @@ export class LoginUserComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form.value);
-    this.doesExist= this.apiService.login(form.value);
-    if(this.doesExist){
+    this.apiService.login(form.value.login, form.value.password).subscribe((data)=>{this.doesExist=data;
+      console.log(this.doesExist);
+    if(this.doesExist['retour']){
       this.router.navigate(['']);
       this.connection.setConnexion(true);
+      this.connection.setIdClient(this.doesExist.idClient);
     }
     else{
       this.badLogin=true;
       this.connection.setConnexion(false);
     }
+  });
+
   }
 
 }

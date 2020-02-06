@@ -8,6 +8,7 @@ export class AppelApiService {
   chemin:string='http://localhost:6868/Mooviproject/MooviProjectBack/api';
   film:string=this.chemin+'/film.php';
   comment:string=this.chemin+'/commentaire.php';
+  connexion:string=this.chemin+'/login.php';
   constructor(
     private http: HttpClient
   ) { }
@@ -28,16 +29,12 @@ export class AppelApiService {
     return this.http.post(this.comment,comment);
   }
 
-  login(user){
-    if(user.login=="titi" && user.password=="toto"){
-      return true;
-    }
-    else 
-      return false;
+  login(user, password){   
+    return this.http.get(this.connexion+'?login='+user+'&password='+password);
   }
 
   canComment(idClient,idFilm){
-    return true;
+    return this.http.get(this.comment+'?idClient='+idClient+'&idFilm='+idFilm);
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PanierService } from 'src/services/panier.service';
+import { AppelApiService } from 'src/services/appel-api.service';
 
 @Component({
   selector: 'app-panier',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanierComponent implements OnInit {
 
-  constructor() { }
+  panierIDs=[];
+  listefilm=[];
+  nonDisplayable=[];
+  constructor(
+    private panierService: PanierService,
+    private api: AppelApiService
+  ) { }
 
   ngOnInit() {
+    this.panierIDs=this.panierService.listePanier;
+    for(let panierId of this.panierIDs){
+      this.api.getFilm(panierId).subscribe(data=>this.listefilm.push(data));
+    }  
+  }
+
+  supprimer(idFilm){
+    this.nonDisplayable.push(idFilm);
+    this.panierService.removeFilmPanier(idFilm);
   }
 
 }

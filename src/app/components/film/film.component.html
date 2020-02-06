@@ -25,7 +25,7 @@
                 <div>
                     <b class="w3-margin-right w3-large">Note :</b> {{film.fil_noteMoyenne}}
                 </div>
-
+                <button *ngIf="connection" (click)="ajoutPanier()">Ajouter au panier</button>
             </div>
 
             <app-commentaire class="w3-margin w3-col l2 s12"></app-commentaire>
