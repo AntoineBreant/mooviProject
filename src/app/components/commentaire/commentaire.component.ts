@@ -26,7 +26,7 @@ export class CommentaireComponent implements OnInit {
     this.filmId = this.route.snapshot.params.filmId;
     this.comments=this.apiService.getComments(this.filmId);
     if(this.connection.isConnected()){
-      this.canComment=this.apiService.canComment(this.connection.getIdClient(),this.filmId);
+      this.apiService.canComment(this.connection.getIdClient(),this.filmId).subscribe((data)=>this.canComment=data);
     }
     console.log(this.comments);
   }

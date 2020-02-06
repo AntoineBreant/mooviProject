@@ -34,7 +34,7 @@ export class AppelApiService {
   }
 
   canComment(idClient,idFilm){
-    return true;
+    return this.http.get(this.comment+'?idClient='+idClient+'&idFilm='+idFilm);
   }
 
 }
