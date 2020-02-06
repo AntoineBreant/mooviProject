@@ -9,6 +9,7 @@ export class AppelApiService {
   film:string=this.chemin+'/film.php';
   comment:string=this.chemin+'/commentaire.php';
   connexion:string=this.chemin+'/login.php';
+  commande:string=this.chemin+'/commande.php';
   constructor(
     private http: HttpClient
   ) { }
@@ -35,6 +36,14 @@ export class AppelApiService {
 
   canComment(idClient,idFilm){
     return this.http.get(this.comment+'?idClient='+idClient+'&idFilm='+idFilm);
+  }
+
+  postCommande(json){
+    return this.http.post(this.commande,json,{
+      headers : {
+          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        }
+    });
   }
 
 }
