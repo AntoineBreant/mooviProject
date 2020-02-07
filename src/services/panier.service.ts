@@ -9,7 +9,7 @@ export class PanierService {
 
   constructor() { 
     console.log(sessionStorage.panier);
-    if(sessionStorage.getItem("panier")!=null){
+    if(sessionStorage.panier!=null && sessionStorage.panier!="null"){
       console.log("panier different de null");
       this.listePanier=JSON.parse(sessionStorage.panier);
     }
@@ -55,5 +55,10 @@ export class PanierService {
 
   getPanier(){
     return this.listePanier;
+  }
+
+  clearPanier(){
+    this.listePanier=[];
+    sessionStorage.removeItem("panier");
   }
 }
