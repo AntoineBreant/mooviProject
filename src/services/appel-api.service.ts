@@ -10,6 +10,7 @@ export class AppelApiService {
   comment:string=this.chemin+'/commentaire.php';
   connexion:string=this.chemin+'/login.php';
   commande:string=this.chemin+'/commande.php';
+  registerChemin:string=this.chemin+'/register.php';
   constructor(
     private http: HttpClient
   ) { }
@@ -32,6 +33,10 @@ export class AppelApiService {
  
   login(user, password){   
     return this.http.get(this.connexion+'?login='+user+'&password='+password);
+  }
+
+  register(data){
+    return this.http.post(this.registerChemin,data);
   }
 
   canComment(idClient,idFilm){

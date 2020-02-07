@@ -5,6 +5,7 @@ import {FilmComponent} from './components/film/film.component';
 import {LoginUserComponent} from './components/login-user/login-user.component';
 import {PagePrincipaleComponent} from './components/page-principale/page-principale.component';
 import {PanierComponent} from './components/panier/panier.component';
+import {RegisterComponent} from './components/register/register.component';
 
 
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: '', component: PagePrincipaleComponent},
   { path: 'film/:filmId', component: FilmComponent },
   { path: 'login', component: LoginUserComponent},
-  {path: 'panier', component: PanierComponent}
+  {path: 'panier', component: PanierComponent},
+  {path: 'inscription', component: RegisterComponent}
 ];
 
 @NgModule({

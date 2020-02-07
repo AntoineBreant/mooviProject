@@ -16,13 +16,13 @@
             <input matInput placeholder="prenom" name="prenom" class="form-control" ngModel>
         </mat-form-field>
     </div>
-</br>
+<br>
     <div class="form-group">
         <mat-form-field>
             <input matInput placeholder="nom" name="nom" class="form-control" ngModel>
         </mat-form-field>
     </div>
-</br>
+<br>
 <button mat-raised-button color="primary" type="submit">Valider</button>
 </form>
-<p *ngIf="badLogin">Mauvais identifiant, veuillez réessayer</p>
+<p *ngIf="doesExist">Le compte existe deja</p>
