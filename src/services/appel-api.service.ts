@@ -29,7 +29,7 @@ export class AppelApiService {
   postComment(comment){
     return this.http.post(this.comment,comment);
   }
-
+ 
   login(user, password){   
     return this.http.get(this.connexion+'?login='+user+'&password='+password);
   }
