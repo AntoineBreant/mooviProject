@@ -7,7 +7,7 @@ import { PanierService } from 'src/services/panier.service';
 @Component({
   selector: 'app-film',
   templateUrl: './film.component.html',
-  styleUrls: ['./film.component.css']
+  styleUrls: ['./film.component.css',  '../../app.component.css']
 })
 export class FilmComponent implements OnInit {
 
