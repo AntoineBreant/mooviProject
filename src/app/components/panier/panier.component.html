@@ -1,0 +1,8 @@
+<div *ngIf="panierIDs.length==0">panier vide</div>
+<div *ngFor="let f of listefilm">
+   <div *ngIf="!nonDisplayable.includes(f.fil_idFilm)"> {{f.fil_nom}} <button (click)="supprimer(f.fil_idFilm)">Supprimer</button></div>
+</div>
+
+<div *ngIf="panierIDs.length!=0">
+<button (click)="valider()">valider la commande</button>
+</div>

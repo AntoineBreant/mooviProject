@@ -5,9 +5,11 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppelApiService {
-  chemin:string='http://localhost/mooviProject/api';
+  chemin:string='http://localhost:6868/Mooviproject/MooviProjectBack/api';
   film:string=this.chemin+'/film.php';
   comment:string=this.chemin+'/commentaire.php';
+  connexion:string=this.chemin+'/login.php';
+  commande:string=this.chemin+'/commande.php';
   constructor(
     private http: HttpClient
   ) { }
@@ -28,16 +30,20 @@ export class AppelApiService {
     return this.http.post(this.comment,comment);
   }
 
-  login(user){
-    if(user.login=="titi" && user.password=="toto"){
-      return true;
-    }
-    else 
-      return false;
+  login(user, password){   
+    return this.http.get(this.connexion+'?login='+user+'&password='+password);
   }
 
   canComment(idClient,idFilm){
-    return true;
+    return this.http.get(this.comment+'?idClient='+idClient+'&idFilm='+idFilm);
+  }
+
+  postCommande(json){
+    return this.http.post(this.commande,json,{
+      headers : {
+          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        }
+    });
   }
 
 }

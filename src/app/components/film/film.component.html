@@ -1,5 +1,35 @@
-<div *ngIf="film"><p>Film: {{film.fil_nom}}</p>
-<p>durée: {{film.fil_duree}}</p>
-<p>résumé: {{film.fil_resume}}</p>
+<div>
+    <button routerLink="" class="w3-btn w3-large " style="box-shadow: none; outline: none; "><i class="w3-margin fa fa-arrow-left "></i> Revenir à la liste des films</button>
+    <div class="w3-content " style="padding-top: 1%;max-width:94% ">
+        <h1 class="w3-padding "><b>{{film.fil_nom}}</b></h1>
+        <div *ngIf="film " class="w3-row ">
+            <div class="w3-col l3 s4 w3-margin ">
+                <img class="w3-image w3-card-4 w3-round " style="width:100%;max-width:300px " src="{{film.fil_bandeAnnonce}} " />
+            </div>
+
+            <div class="w3-col l6 s6 w3-padding " style="margin-right:80px; ">
+                <h3><b class="w3-margin-right ">Résume :</b></h3>
+                <p class="w3-margin-top w3-margin-bottom " style="text-align: justify; ">
+                    {{film.fil_resume}}
+                </p>
+
+                <div>
+                    <b class="w3-margin-right w3-large ">Durée :</b> {{film.fil_duree}}
+                </div>
+                <div>
+                    <b class="w3-margin-right w3-large ">Année :</b> {{film.fil_dateSortie | date:'dd/MM/yyyy'}}
+                </div>
+                <div>
+                    <b class="w3-margin-right w3-large ">Genre :</b> Drame
+                </div>
+                <div>
+                    <b class="w3-margin-right w3-large ">Note :</b> {{film.fil_noteMoyenne}}
+                </div>
+                <button *ngIf="connection " (click)="ajoutPanier() " class="w3-btn w3-theme w3-large w3-margin-top w3-margin-right ">Ajouter au panier <i class="w3-margin-left fa fa-shopping-cart "></i></button>
+                <button *ngIf="connection " (click)="telechargement() " class="w3-btn w3-green w3-large w3-margin-top ">Telechargement <i class="w3-margin-left fa fa-cloud-download"></i></button>
+            </div>
+
+            <app-commentaire class="w3-margin w3-col l2 s12 "></app-commentaire>
+        </div>
+    </div>
 </div>
-<app-commentaire></app-commentaire>

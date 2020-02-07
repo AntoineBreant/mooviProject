@@ -19,6 +19,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PagePrincipaleComponent } from './components/page-principale/page-principale.component';
 import { FiltreRechercheComponent } from './components/filtre-recherche/filtre-recherche.component';
+import { PanierComponent } from './components/panier/panier.component';
 
 
 
@@ -31,7 +32,8 @@ import { FiltreRechercheComponent } from './components/filtre-recherche/filtre-r
     LoginUserComponent,
     NavbarComponent,
     PagePrincipaleComponent,
-    FiltreRechercheComponent
+    FiltreRechercheComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,
