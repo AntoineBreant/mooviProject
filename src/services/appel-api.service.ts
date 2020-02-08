@@ -5,7 +5,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppelApiService {
-  chemin:string='http://localhost:6868/Mooviproject/MooviProjectBack/api';
+  chemin:string='http://localhost/Mooviproject/api';
   film:string=this.chemin+'/film.php';
   comment:string=this.chemin+'/commentaire.php';
   connexion:string=this.chemin+'/login.php';
@@ -29,7 +29,7 @@ export class AppelApiService {
   postComment(comment){
     return this.http.post(this.comment,comment);
   }
-
+ 
   login(user, password){   
     return this.http.get(this.connexion+'?login='+user+'&password='+password);
   }
