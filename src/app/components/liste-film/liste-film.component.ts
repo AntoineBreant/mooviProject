@@ -5,8 +5,7 @@ import { ConnexionService } from 'src/services/connexion.service';
 @Component({
   selector: 'app-liste-film',
   templateUrl: './liste-film.component.html',
-  styleUrls: ['./liste-film.component.css',
-  '../../app.component.css']
+  styleUrls: ['./liste-film.component.css']
 })
 export class ListeFilmComponent implements OnInit {
 
