@@ -14,6 +14,7 @@ export class PanierComponent implements OnInit {
   panierIDs=[];
   listefilm=[];
   nonDisplayable=[];
+  img: string;
   constructor(
     private panierService: PanierService,
     private api: AppelApiService,
@@ -22,6 +23,10 @@ export class PanierComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    
+    this.img = 'https://image.flaticon.com/icons/svg/1069/1069102.svg';
+
     if(!this.serviceConn.isConnected()){
       this.router.navigate(['']);
     }

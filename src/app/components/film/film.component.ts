@@ -14,6 +14,9 @@ export class FilmComponent implements OnInit {
   film ;
   filmId;
   connection;
+  ajouter;
+  telechargement;
+
   constructor(
     private apiService2: AppelApiService,
     private route: ActivatedRoute,
@@ -29,6 +32,11 @@ export class FilmComponent implements OnInit {
 
   ajoutPanier(){
       this.panier.addFilmPanier(this.filmId);
+      this.ajouter = true;
+  }
+
+  telechargementFilm(){
+      this.telechargement = true;
   }
 
 }
