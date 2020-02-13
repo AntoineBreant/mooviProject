@@ -35,6 +35,6 @@ export class LoginUserComponent implements OnInit {
       this.badLogin=true;
       this.connection.setConnexion(false);
     }
-}
+  }
 
 }
