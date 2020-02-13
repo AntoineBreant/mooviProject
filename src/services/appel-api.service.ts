@@ -36,7 +36,11 @@ export class AppelApiService {
   }
 
   register(data){
-    return this.http.post(this.registerChemin,data);
+    return this.http.post(this.registerChemin,data,{
+      headers : {
+          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        }
+    });
   }
 
   canComment(idClient,idFilm){

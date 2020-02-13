@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
       this.databackDoesExist=data;
       this.doesExist=this.databackDoesExist.retour;
       if(!this.doesExist){
+        console.log(form.value);
         this.apiService.register(form.value).subscribe();
         alert("compte créé");
         this.router.navigate(['']);
