@@ -20,6 +20,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PagePrincipaleComponent } from './components/page-principale/page-principale.component';
 import { FiltreRechercheComponent } from './components/filtre-recherche/filtre-recherche.component';
 import { PanierComponent } from './components/panier/panier.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CommandesComponent } from './components/commandes/commandes.component';
 
 
 
@@ -33,7 +35,9 @@ import { PanierComponent } from './components/panier/panier.component';
     NavbarComponent,
     PagePrincipaleComponent,
     FiltreRechercheComponent,
-    PanierComponent
+    PanierComponent,
+    RegisterComponent,
+    CommandesComponent
   ],
   imports: [
     BrowserModule,

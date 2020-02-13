@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { AppelApiService } from 'src/services/appel-api.service';
 import { Router } from '@angular/router';
 import { ConnexionService } from 'src/services/connexion.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-login-user',
-  templateUrl: './login-user.component.html',
-  styleUrls: ['./login-user.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginUserComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   loginForm;
   badLogin=false;
   doesExist: boolean;
+  databackDoesExist;
   constructor(
     private apiService: AppelApiService,
     private router: Router,
@@ -25,7 +26,16 @@ export class LoginUserComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form.value);
-    this.doesExist= this.apiService.login(form.value);
+    this.apiService.login(form.value.login,form.value.password).subscribe(data=>{
+      this.databackDoesExist=data;
+      this.doesExist=this.databackDoesExist.retour;
+      if(!this.doesExist){
+        console.log(form.value);
+        this.apiService.register(form.value).subscribe();
+        alert("compte créé");
+        this.router.navigate(['']);
+      }
+    });
     console.log("utilisateur existe ? "+this.doesExist);
     if(this.doesExist){
       this.router.navigate(['']);
