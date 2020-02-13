@@ -17,8 +17,8 @@
 
     <!-- La liste des films -->
     <h2 class="w3-margin-top-nav w3-margin-left">Résultat de votre recherche :</h2>
-    <ul class="w3-ul w3-margin-top w3-padding" *ngFor="let f of films | async">
-        <li class="w3-cont w3-row">
+    <ul *ngFor="let f of films" class="w3-ul w3-margin-top w3-padding">
+        <li class="w3-cont w3-row" *ngIf="f.isDisplayable(f.fil_idFilm)">
             <img class="w3-col w3-image w3-card-4 w3-round w3-margin" style="width:100%;max-width:250px" src="{{f.fil_bandeAnnonce}}" />
             <div class="w3-display-container w3-margin-top" style="height:350px">
                 <h4><b>{{f.fil_nom}}</b></h4>

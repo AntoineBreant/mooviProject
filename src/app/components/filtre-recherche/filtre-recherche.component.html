@@ -2,10 +2,9 @@
     <div href="#" class="w3-bar-item w3-large w3-margin-top" style="font-weight:bold">Filtres de recherche :</div>
 
     <div href="#genre" class="w3-bar-item w3-margin-top" style="font-weight:bold">Genre :</div>
-    <ul class="w3-ul">
-        <li href="#horreur" class="w3-bar-item w3-button w3-text-theme-d4">Horreur</li>
-        <li href="#comedie" class="w3-bar-item w3-button w3-text-theme-d4">Comedie</li>
-        <li href="#drame" class="w3-bar-item w3-button w3-text-theme-d4">Drame</li>
+    <ul *ngFor="let g of genre" class="w3-ul">
+
+        <li href="#horreur" (onclick)="filterByGenre(g.gen_idGenre)" class="w3-bar-item w3-button w3-text-theme-d4">{{g.gen_nom}}</li>
     </ul>
 
     <div href="#genre" class="w3-bar-item w3-margin-top" style="font-weight:bold">Date :</div>

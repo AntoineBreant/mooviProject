@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppelApiService } from 'src/services/appel-api.service';
+import { FilterService } from 'src/services/filter.service';
 
 @Component({
   selector: 'app-filtre-recherche',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltreRechercheComponent implements OnInit {
 
-  constructor() { }
+  genre;
+  constructor(private api: AppelApiService,
+              private filtre: FilterService) { }
 
   ngOnInit() {
+    this.api.getGenre().subscribe(data=>this.genre=data);
+  }
+
+  filterBygenre(idGenre){
+    this.filtre.setGenre(idGenre);
   }
 
 }

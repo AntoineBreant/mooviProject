@@ -11,6 +11,7 @@ export class AppelApiService {
   connexion:string=this.chemin+'/login.php';
   commande:string=this.chemin+'/commande.php';
   registerChemin:string=this.chemin+'/register.php';
+  genre:string=this.chemin+'/genre.php';
   constructor(
     private http: HttpClient
   ) { }
@@ -53,6 +54,14 @@ export class AppelApiService {
           'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8' 
         }
     });
+  }
+
+  getCommande(idClient){
+    return this.http.get(this.commande+"?idClient="+idClient);
+  }
+
+  getGenre(){
+    return this.http.get(this.genre);
   }
 
 }
