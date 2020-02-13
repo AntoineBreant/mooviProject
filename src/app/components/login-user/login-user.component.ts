@@ -36,7 +36,7 @@ export class LoginUserComponent implements OnInit {
       this.connection.setIdClient(this.doesExist.idClient);
     }
     else{
-      this.badLogin=true;
+      this.badLogin = true;
       this.connection.setConnexion(false);
     }
   });

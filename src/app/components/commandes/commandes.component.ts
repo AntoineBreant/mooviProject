@@ -14,7 +14,7 @@ export class CommandesComponent implements OnInit {
               private conn:ConnexionService) { }
 
   ngOnInit() {
-    this.api.getCommande(this.conn.getIdClient()).subscribe(data=>this.commande=data);
+    this.api.getCommande(this.conn.getIdClient()).subscribe(data=>this.commandes=data);
   }
 
 }
