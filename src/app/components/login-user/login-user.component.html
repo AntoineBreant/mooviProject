@@ -1,5 +1,5 @@
 <div class="w3-center w3-card w3-display-middle" style="height: 400px; width: 350px;">
-    <p class="w3-theme-l1 w3-padding" style="font-size: 36px;"><b>Connexion</b></p>
+    <p class="w3-theme w3-padding" style="font-size: 36px;"><b>Connexion</b></p>
 
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
@@ -16,5 +16,6 @@
         <br>
         <button mat-raised-button class="w3-theme" type="submit">Valider</button>
     </form>
-    <p *ngIf="badLogin" class="w3-text-red w3-center w3-margin">Mauvais identifiant, veuillez réessayer</p>
 </div>
+
+<p *ngIf="badLogin" class="w3-text-red w3-center w3-margin">Mauvais identifiant, veuillez réessayer</p>

@@ -37,6 +37,14 @@ export class RegisterComponent implements OnInit {
       }
     });
     console.log("utilisateur existe ? "+this.doesExist);
+    if(this.doesExist){
+      this.router.navigate(['']);
+      this.connection.setConnexion(true);
+    }
+    else{
+      this.badLogin=true;
+      this.connection.setConnexion(false);
+    }
   }
 
 }
