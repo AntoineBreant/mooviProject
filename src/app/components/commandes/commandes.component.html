@@ -1,28 +1,26 @@
-<div class="w3-bar-block w3-light-gray" style="height:856px; position:fixed">
-    <div href="#" class="w3-bar-item w3-large w3-margin-top" style="font-weight:bold">Vos commandes :</div>
-    <ul class="w3-ul">
-        <li href="#commande" class="w3-bar-item w3-button w3-text-theme-d4">Commandé</li>
-        <li href="#valide" class="w3-text-green w3-bar-item w3-button w3-text-theme-d4">Validé</li>
-        <li href="#annule" class="w3-text-red w3-bar-item w3-button w3-text-theme-d4">Annulé</li>
-    </ul>
-</div>
-<div class="w3-content w3-white w3-half w3-padding" style="margin-left: 25%; width: 50%; min-width: 725px;">
-    <div *ngFor="let c of commandes.commande">
-        <div *ngIf="c.cde_idCommande" class="w3-ul">
+<div class="w3-content">
+    <div *ngFor="let c of commandes">
+        <div *ngIf="c.commande" class="w3-ul">
             <li class="w3-display-container">
-                <h1>Commande {{c.cde_idCommande}}</h1>
-                <h5><i class="fa fa-calendar" aria-hidden="true"></i> {{c.cde_date}}</h5>
-                <div *ngIf="c.cde_statut=='Commandé'" class="w3-green w3-margin w3-padding w3-display-topright">
+                <h1>Commande {{c.commande.cde_idCommande}}</h1>
+                <h5><i class="fa fa-calendar" aria-hidden="true"></i> {{c.commande.cde_date}}</h5>
+                <div *ngIf="c.commande.cde_statut=='Commandé'" class="w3-green w3-margin w3-padding w3-display-topright">
                     Commandé <i class="fa fa-check-circle" aria-hidden="true"></i>
+                </div>
+
+                <div class="w3-content w3-margin w3-padding">
+                    <div *ngFor="let f of c.commande.films" class="w3-ul">
+                        <li>{{f.fil_nom}}</li>
+                        <li class="divider"></li>
+                    </div>
                 </div>
             </li>
             <li class="divider"></li>
         </div>
     </div>
 
-    <div *ngIf="commandes.commande==0">
+    <div *ngIf="commandes==0">
         <div class="w3-content w3-display-middle">
-            <img class="w3-center" style="width:100%;max-width:400px" src="{{img}}" />
             <h1 class="w3-center">Aucune commande n'a été effectuée</h1>
         </div>
     </div>
