@@ -61,7 +61,7 @@ export class AppelApiService {
   }
 
   getCommande(idClient){
-    return this.http.get(this.commande+"?idClient="+idClient);
+    return this.http.get(this.film+"?idClient="+idClient);
   }
 
   getGenre(){
