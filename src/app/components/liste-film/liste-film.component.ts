@@ -19,11 +19,12 @@ export class ListeFilmComponent implements OnInit {
 
 
   ngOnInit() {
-    this.films = this.apiService.getFilms().subscribe(data=>this.films=data);
+    this.apiService.getFilms().subscribe(data=>this.films=data);
   }
 
-  isDisplayable(films){
-    return this.filter.shouldDisplay(films.gen_nom, films.annee);
+ public isDisplayable(genre){
+    // return true;
+    return this.filter.shouldDisplay(genre);
   }
 
 }
