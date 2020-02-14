@@ -1,10 +1,10 @@
 <nav class="w3-row w3-top">
     <div class="w3-bar w3-theme w3-card">
         <a routerLink="" class="w3-xxlarge w3-bar-item w3-button w3-hover-theme w3-padding w3-margin-left" style="font-weight:bold">MooviProject</a>
-        <a *ngIf="!isConnected" routerLink="/login" class="w3-margin w3-white w3-bar-item w3-button w3-hover-white w3-padding w3-right w3-text-theme">Se connecter</a>
-        <a *ngIf="isConnected" routerLink="/" (click)="deconnexion()" class="w3-margin w3-white w3-bar-item w3-button w3-hover-white w3-padding w3-right w3-text-theme">Se deconnecter</a>
-        <a *ngIf="!isConnected" href="/inscription" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right">S'inscrire</a>
-        <a *ngIf="isConnected" routerLink="/commandes" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right">Historique des commandes</a>
+        <a *ngIf="!isConnected" routerLink="/login" class="w3-margin w3-white w3-bar-item w3-button w3-hover-white w3-padding w3-right w3-text-theme"><i class="fa fa-user-circle-o"></i> Connexion </a>
+        <a *ngIf="isConnected" routerLink="/" (click)="deconnexion()" class="w3-margin w3-white w3-bar-item w3-button w3-hover-white w3-padding w3-right w3-text-theme"> Se deconnecter <i class="fa fa-sign-out"></i></a>
+        <a *ngIf="!isConnected" href="/inscription" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right"><i class="fa fa-user-plus"></i> S'inscrire</a>
+        <a *ngIf="isConnected" routerLink="/commandes" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right">Mes Commandes <i class="fa fa-history" aria-hidden="true"></i></a>
         <a *ngIf="isConnected" routerLink="/panier" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right">Mon Panier <i class="fa fa-shopping-cart"></i></a>
     </div>
 </nav>
