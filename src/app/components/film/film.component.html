@@ -26,7 +26,7 @@
                     <b class="w3-margin-right w3-large ">Note :</b> {{film.fil_noteMoyenne}}
                 </div>
                 <button *ngIf="connection" (click)="ajoutPanier() " class="w3-btn w3-green w3-large w3-margin-top w3-margin-right">Ajouter au panier <i class="w3-margin-left fa fa-shopping-cart "></i></button>
-                <button *ngIf="connection" (click)="telechargementFilm() " class="w3-btn w3-theme w3-large w3-margin-top">Telechargement <i class="w3-margin-left fa fa-cloud-download"></i></button>
+                <button *ngIf="connection" class="w3-btn w3-theme w3-large w3-margin-top"><a href="../../../assets/film.mp4" download>Telechargement</a> <i class="w3-margin-left fa fa-cloud-download"></i></button>
             </div>
 
             <app-commentaire class="w3-margin w3-col l2 s12 "></app-commentaire>
