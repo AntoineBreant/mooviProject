@@ -29,7 +29,11 @@ export class AppelApiService {
   }
 
   postComment(comment){
-    return this.http.post(this.comment,comment);
+    return this.http.post(this.comment,comment,{
+      headers : {
+          'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8' 
+        }
+    });
   }
  
   login(user, password){   
