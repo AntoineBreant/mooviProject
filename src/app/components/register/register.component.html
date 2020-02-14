@@ -1,28 +1,32 @@
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <div class="form-group">
-        <mat-form-field>
-            <input matInput placeholder="login" name="login" class="form-control" ngModel>
-        </mat-form-field>
-    </div>
-<br>
-    <div class="form-group">
-        <mat-form-field>
-            <input matInput placeholder="mot de passe"  name="password" class="form-control" ngModel>
-        </mat-form-field>
-    </div>
-<br>
-    <div class="form-group">
-        <mat-form-field>
-            <input matInput placeholder="prenom" name="prenom" class="form-control" ngModel>
-        </mat-form-field>
-    </div>
-<br>
-    <div class="form-group">
-        <mat-form-field>
-            <input matInput placeholder="nom" name="nom" class="form-control" ngModel>
-        </mat-form-field>
-    </div>
-<br>
-<button mat-raised-button color="primary" type="submit">Valider</button>
-</form>
-<p *ngIf="doesExist">Le compte existe deja</p>
+<div class="w3-center w3-card w3-display-middle" style="width: 350px;">
+    <p class="w3-theme-dark w3-padding" style="font-size: 36px;"><b>Inscription</b></p>
+
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Login" name="ogin" class="form-control" ngModel>
+            </mat-form-field>
+        </div>
+        <br>
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Mot de passe" name="password" class="form-control" ngModel>
+            </mat-form-field>
+        </div>
+        <br>
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Prenom" name="prenom" class="form-control" ngModel>
+            </mat-form-field>
+        </div>
+        <br>
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Nom" name="nom" class="form-control" ngModel>
+            </mat-form-field>
+        </div>
+        <br>
+        <button mat-raised-button class="w3-theme-dark w3-margin" type="submit">Valider</button>
+    </form>
+</div>
+<p *ngIf="doesExist" class="w3-display-bottommiddle w3-text-red">Le compte existe deja</p>

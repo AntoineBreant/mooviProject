@@ -25,18 +25,14 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
     this.apiService.login(form.value.login,form.value.password).subscribe(data=>{
       this.databackDoesExist=data;
       this.doesExist=this.databackDoesExist.retour;
       if(!this.doesExist){
-        console.log(form.value);
         this.apiService.register(form.value).subscribe();
-        alert("compte créé");
         this.router.navigate(['']);
       }
     });
-    console.log("utilisateur existe ? "+this.doesExist);
     if(this.doesExist){
       this.router.navigate(['']);
       this.connection.setConnexion(true);

@@ -1,8 +1,24 @@
-<div *ngIf="panierIDs.length==0">panier vide</div>
-<div *ngFor="let f of listefilm">
-   <div *ngIf="!nonDisplayable.includes(f.fil_idFilm)"> {{f.fil_nom}} <button (click)="supprimer(f.fil_idFilm)">Supprimer</button></div>
+<div *ngIf="panierIDs.length==0">
+    <div class="w3-content w3-display-middle">
+        <img class="w3-center" style="width:100%;max-width:400px" src="{{img}}" />
+        <h1 class="w3-center">Votre panier est vide</h1>
+    </div>
 </div>
-
 <div *ngIf="panierIDs.length!=0">
-<button (click)="valider()">valider la commande</button>
+    <div class="w3-display-middle w3-content w3-margin-top">
+        <img class="w3-margin w3-center" style="width:100%;max-width:200px" src="{{img}}" />
+        <h1 class="w3-center">Panier</h1>
+        <div>
+            <div *ngFor="let f of listefilm">
+                <div *ngIf="!nonDisplayable.includes(f.fil_idFilm)" class="w3-ul w3-card">
+                    <li class="w3-display-container w3-margin">
+                        {{f.fil_nom}}
+                        <button class="w3-button w3-display-right" (click)="supprimer(f.fil_idFilm)"><i class="fa fa-trash "></i></button>
+                    </li>
+                </div>
+            </div>
+
+            <button class="w3-button w3-theme w3-margin" (click)="valider()">Valider la commande <i class="w3-margin-left fa fa-shopping-cart "></i></button>
+        </div>
+    </div>
 </div>

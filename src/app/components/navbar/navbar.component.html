@@ -5,6 +5,6 @@
         <a *ngIf="isConnected" routerLink="/" (click)="deconnexion()" class="w3-margin w3-white w3-bar-item w3-button w3-hover-white w3-padding w3-right w3-text-theme">Se deconnecter</a>
         <a *ngIf="!isConnected" href="/inscription" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right">S'inscrire</a>
         <a *ngIf="isConnected" routerLink="/commandes" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right">Historique des commandes</a>
-        <a *ngIf="isConnected" routerLink="/panier" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right">Mon Panier</a>
+        <a *ngIf="isConnected" routerLink="/panier" class="w3-margin w3-bar-item w3-button w3-hover-theme w3-padding w3-hide-small w3-right">Mon Panier <i class="fa fa-shopping-cart"></i></a>
     </div>
 </nav>

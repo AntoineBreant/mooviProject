@@ -25,11 +25,17 @@
                 <div>
                     <b class="w3-margin-right w3-large ">Note :</b> {{film.fil_noteMoyenne}}
                 </div>
-                <button *ngIf="connection " (click)="ajoutPanier() " class="w3-btn w3-theme w3-large w3-margin-top w3-margin-right ">Ajouter au panier <i class="w3-margin-left fa fa-shopping-cart "></i></button>
-                <button *ngIf="connection " (click)="telechargement() " class="w3-btn w3-green w3-large w3-margin-top ">Telechargement <i class="w3-margin-left fa fa-cloud-download"></i></button>
+                <button *ngIf="connection" (click)="ajoutPanier() " class="w3-btn w3-green w3-large w3-margin-top w3-margin-right">Ajouter au panier <i class="w3-margin-left fa fa-shopping-cart "></i></button>
+                <button *ngIf="connection" (click)="telechargementFilm() " class="w3-btn w3-theme w3-large w3-margin-top">Telechargement <i class="w3-margin-left fa fa-cloud-download"></i></button>
             </div>
 
             <app-commentaire class="w3-margin w3-col l2 s12 "></app-commentaire>
+        </div>
+        <div *ngIf="ajouter" class="w3-panel w3-green w3-border w3-display-container w3-animate-zoom" style="width: 40%;">
+            <p class="w3-margin">Le film a bien été ajouté à votre panier</p><span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span>
+        </div>
+        <div *ngIf="telechargement" class="w3-panel w3-theme w3-border w3-display-container w3-animate-zoom" style="width: 40%;">
+            <p class="w3-margin">Le film a bien été télécharger</p><span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span>
         </div>
     </div>
 </div>
