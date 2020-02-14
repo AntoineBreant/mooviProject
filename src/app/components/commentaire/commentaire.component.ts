@@ -32,6 +32,12 @@ export class CommentaireComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    let value=form.value;
+    let comment={idFilm:this.filmId,
+      idClient:this.connection.getIdClient(),
+      texte:value.commentaire,
+      note: value.note};
+    this.apiService.postComment(comment).subscribe();
     this.canComment=false;
   }
 

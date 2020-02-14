@@ -1,8 +1,8 @@
-<div>
+<div *ngIf="film ">
     <button routerLink="" class="w3-btn w3-large " style="box-shadow: none; outline: none; "><i class="w3-margin fa fa-arrow-left "></i> Revenir à la liste des films</button>
     <div class="w3-content " style="padding-top: 1%;max-width:94% ">
         <h1 class="w3-padding "><b>{{film.fil_nom}}</b></h1>
-        <div *ngIf="film " class="w3-row ">
+        <div  class="w3-row ">
             <div class="w3-col l3 s4 w3-margin ">
                 <img class="w3-image w3-card-4 w3-round " style="width:100%;max-width:300px " src="{{film.fil_bandeAnnonce}} " />
             </div>
