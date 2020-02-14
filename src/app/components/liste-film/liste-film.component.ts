@@ -22,9 +22,20 @@ export class ListeFilmComponent implements OnInit {
     this.apiService.getFilms().subscribe(data=>this.films=data);
   }
 
- public isDisplayable(genre){
+ public isDisplayable(genre,date){
     // return true;
-    return this.filter.shouldDisplay(genre);
+    return this.filter.shouldDisplay(genre,date);
+  }
+
+  public recherche(event){
+    let value=event.target.value;
+    if(value.length>=3){
+      this.apiService.getFilmBySearch(value).subscribe(data=>{this.films=data});
+    }
+
+    if(value.length==0){
+      this.apiService.getFilms().subscribe(data=>this.films=data);
+    }
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppelApiService } from 'src/services/appel-api.service';
 import { FilterService } from 'src/services/filter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filtre-recherche',
@@ -10,15 +11,25 @@ import { FilterService } from 'src/services/filter.service';
 export class FiltreRechercheComponent implements OnInit {
 
   genre;
+  genreChoisiId;
+  dateChoisie;
   constructor(private api: AppelApiService,
-              private filtre: FilterService) { }
+              private filtre: FilterService,
+              private router: Router) { }
 
   ngOnInit() {
     this.api.getGenre().subscribe(data=>this.genre=data);
   }
 
-  filterBygenre(idGenre){
+  filterByGenre(idGenre){
+    this.genreChoisiId=idGenre;
     this.filtre.setGenre(idGenre);
+  }
+
+  filterByDate(min,max){
+    console.log("dans la fonction");
+    this.dateChoisie=min;
+    this.filtre.setYearRange(min,max);
   }
 
 }

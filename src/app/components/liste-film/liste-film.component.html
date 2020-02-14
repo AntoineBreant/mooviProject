@@ -5,7 +5,7 @@
     <div class="w3-display-container w3-margin-top">
         <div style="border: 1px solid #DDD;  width: 50%" class="w3-round-xxlarge w3-padding">
             <i class="fa fa-search w3-margin-right"></i>
-            <input type="text" placeholder="Rechercher un film.." style="border: none;outline: none; width:80%">
+            <input type="text" placeholder="Rechercher un film.." (input)="recherche($event)" style="border: none;outline: none; width:80%">
         </div>
 
         <div class="w3-display-topright">
@@ -18,7 +18,7 @@
     <!-- La liste des films -->
     <h2 class="w3-margin-top-nav w3-margin-left">Résultat de votre recherche :</h2>
     <ul *ngFor="let f of films" class="w3-ul w3-margin-top w3-padding">
-        <li *ngIf="isDisplayable(f.genre)" class="w3-cont w3-row" >
+        <li *ngIf="isDisplayable(f.genre,f.fil_dateSortie)" class="w3-cont w3-row" >
             <img class="w3-col w3-image w3-card-4 w3-round w3-margin" style="width:100%;max-width:250px" src="{{f.fil_bandeAnnonce}}" />
             <div class="w3-display-container w3-margin-top" style="height:350px">
                 <h4><b>{{f.fil_nom}}</b></h4>
