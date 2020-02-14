@@ -21,23 +21,16 @@ export class FilterService {
      return this.genre;
    }
 
-   shouldDisplay(idGenre, year){
-     let retourGenre=false;
-     let retourAnnee=false;
+   shouldDisplay(idGenre){
+    if(this.genre==null)
+      return true;
 
-     if(idGenre.includes(this.genre)|| this.genre==null){
-       retourGenre=true;
-     }
-
-     if(year<this.maxYear&&year>this.maxYear){
-       retourAnnee=true;
-     }
-
-     if(this.maxYear==null||this.minYear==null){
-       retourAnnee=true;
-     }
-
-     return retourAnnee&&retourGenre;
+    for(let g of idGenre){
+      if (g.con_idGenre==this.genre)
+      return true;
+    }
+ 
+    return false;
 
    }
 
