@@ -1,17 +1,31 @@
 <div class="w3-bar-block" style="height:856px; position:fixed">
     <div href="#" class="w3-bar-item w3-large w3-margin-top" style="font-weight:bold">Filtres de recherche :</div>
-    <button (click)="filterByGenre(null);filterByDate(null)">annuler la recherche</button>
-    <div href="#genre" class="w3-bar-item w3-margin-top" style="font-weight:bold">Genre :</div>
-    <ul *ngFor="let g of genre" class="w3-ul">
+    <button (click)="filterByGenre(null);filterByDate(null)" class="w3-button" style="margin: 15px;
+    margin-top: initial;
+    margin-bottom: initial;
+    background-color: darkorange;
+    color: white;" *ngIf="isFiltre">Annuler la recherche</button>
+    <div href=" #genre " class="w3-bar-item w3-margin-top " style="font-weight:bold ">Genre :</div>
+    <ul *ngFor="let g of genre " class="w3-ul ">
 
-        <li href="#horreur" (click)="filterByGenre(g.gen_idGenre)" class="w3-bar-item w3-button w3-text-theme-d4">{{g.gen_nom}} <div *ngIf="g.gen_idGenre==genreChoisiId">X</div></li>
+        <li href="#horreur " (click)="filterByGenre(g.gen_idGenre) " class="w3-bar-item w3-button w3-text-theme-d4 ">{{g.gen_nom}}
+            <i *ngIf="g.gen_idGenre==genreChoisiId " class="w3-margin-left fa fa-check-square-o "></i>
+        </li>
     </ul>
 
-    <div href="#genre" class="w3-bar-item w3-margin-top" style="font-weight:bold">Date :</div>
-    <ul class="w3-ul">
-        <li (click)="filterByDate(1980,1990)" class="w3-bar-item w3-button w3-text-theme-d4">1980-1990 <div *ngIf="dateChoisie==1980">X</div></li>
-        <li (click)="filterByDate(1990,2000)" class="w3-bar-item w3-button w3-text-theme-d4">1990-2000 <div *ngIf="dateChoisie==1990">X</div></li>
-        <li (click)="filterByDate(2000,2010)" class="w3-bar-item w3-button w3-text-theme-d4">2000-2010 <div *ngIf="dateChoisie==2000">X</div></li>
-        <li (click)="filterByDate(2010,2020)" class="w3-bar-item w3-button w3-text-theme-d4">2010-2020 <div *ngIf="dateChoisie==2010">X</div></li>
+    <div href="#genre " class="w3-bar-item w3-margin-top " style="font-weight:bold ">Date :</div>
+    <ul class="w3-ul ">
+        <li (click)="filterByDate(1980,1990) " class="w3-bar-item w3-button w3-text-theme-d4 ">1980-1990
+            <i *ngIf="dateChoisie==1980 " class="w3-margin-left fa fa-check-square-o "></i>
+        </li>
+        <li (click)="filterByDate(1990,2000) " class="w3-bar-item w3-button w3-text-theme-d4 ">1990-2000
+            <i *ngIf="dateChoisie==1990 " class="w3-margin-left fa fa-check-square-o "></i>
+        </li>
+        <li (click)="filterByDate(2000,2010) " class="w3-bar-item w3-button w3-text-theme-d4 ">2000-2010
+            <i *ngIf="dateChoisie==2000 " class="w3-margin-left fa fa-check-square-o "></i>
+        </li>
+        <li (click)="filterByDate(2010,2020) " class="w3-bar-item w3-button w3-text-theme-d4 ">2010-2020
+            <i *ngIf="dateChoisie==2010 " class="w3-margin-left fa fa-check-square-o "></i>
+        </li>
     </ul>
 </div>

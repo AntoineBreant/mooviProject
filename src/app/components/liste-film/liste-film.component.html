@@ -1,4 +1,4 @@
-<div class="w3-white w3-half w3-padding" style="margin-left: 25%; width: 50%; min-width: 725px;">
+<div class="w3-white w3-half w3-padding" style="margin-left: 25%; width: 50%; min-width: 725px; min-height: 870px;">
 
     <!-- La ligne de recherche de film (bouton + recherche) -->
 
@@ -10,23 +10,27 @@
 
         <div class="w3-display-topright">
             <p style="font-weight:bold">Trier par :</p>
-            <button class="w3-button w3-hover-theme" style=".button:hover{ background-color:yellow;}">Pertinence</button>
+            <button class="w3-button w3-hover-theme">Pertinence</button>
             <button class="w3-button w3-hover-theme">Récent</button>
         </div>
     </div>
 
     <!-- La liste des films -->
     <h2 class="w3-margin-top-nav w3-margin-left">Résultat de votre recherche :</h2>
-    <ul *ngFor="let f of films" class="w3-ul w3-margin-top w3-padding">
-        <li *ngIf="isDisplayable(f.genre,f.fil_dateSortie)" class="w3-cont w3-row" >
-            <img class="w3-col w3-image w3-card-4 w3-round w3-margin" style="width:100%;max-width:250px" src="{{f.fil_bandeAnnonce}}" />
-            <div class="w3-display-container w3-margin-top" style="height:350px">
-                <h4><b>{{f.fil_nom}}</b></h4>
-                <p class="w3-margin-top w3-margin-bottom" style="text-align: justify;">{{f.fil_resume}}</p>
-                <p><b class="w3-margin-right">Genre :</b>{{f.fil_genre}}</p>
-                <!-- TO DO rajouter ça-->
-                <p><b class="w3-margin-right">Note :</b>{{f.fil_note}}</p>
-                <button routerLink="film/{{f.fil_idFilm}}" class="w3-btn w3-theme w3-large w3-display-bottomright w3-margin-left">Voir plus<i class="w3-margin-left fa fa-eye"></i></button>
+    <div *ngIf="films!=null">
+        <ul class="w3-ul w3-margin-top w3-padding">
+            <div *ngFor="let f of films">
+                <li *ngIf="isDisplayable(f.genre,f.fil_dateSortie)" class="w3-cont w3-row">
+                    <img class="w3-col w3-image w3-card-4 w3-round w3-margin" style="width:100%;max-width:250px" alt="Affiche du Film" src="{{f.fil_bandeAnnonce}}" />
+                    <div class="w3-display-container w3-margin-top" style="height:350px">
+                        <h4><b>{{f.fil_nom}}</b></h4>
+                        <p class="w3-margin-top w3-margin-bottom" style="text-align: justify;">{{f.fil_resume}}</p>
+                        <p><b class="w3-margin-right">Genre :</b>{{f.fil_genre}}</p>
+                        <!-- TO DO rajouter ça-->
+                        <p><b class="w3-margin-right">Note :</b>{{f.fil_note}}</p>
+                        <button routerLink="film/{{f.fil_idFilm}}" class="w3-btn w3-theme w3-large w3-display-bottomright w3-margin-left">Voir plus<i class="w3-margin-left fa fa-eye"></i></button>
+                    </div>
+                </li>
             </div>
-        </li>
-    </ul>
+        </ul>
+    </div>

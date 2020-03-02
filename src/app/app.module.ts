@@ -21,9 +21,10 @@ import { PagePrincipaleComponent } from './components/page-principale/page-princ
 import { FiltreRechercheComponent } from './components/filtre-recherche/filtre-recherche.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { RegisterComponent } from './components/register/register.component';
-import { CommandesComponent } from './components/commandes/commandes.component';
+import { CommandesComponent } from './components/commandes/commandes.component';import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
 
-
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [

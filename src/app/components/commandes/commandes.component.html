@@ -2,12 +2,12 @@
     <div *ngFor="let c of commandes">
         <div *ngIf="c.commande" class="w3-ul">
             <li class="w3-display-container">
-                <h1>Commande {{c.commande.cde_idCommande}}</h1>
-                <h5><i class="fa fa-calendar" aria-hidden="true"></i> {{c.commande.cde_date}}</h5>
+                <h1>Commande du {{c.commande.cde_date | date: 'fullDate': undefined : 'fr'}}</h1>
                 <div *ngIf="c.commande.cde_statut=='Commandé'" class="w3-green w3-margin w3-padding w3-display-topright">
                     Commandé <i class="fa fa-check-circle" aria-hidden="true"></i>
                 </div>
 
+                <p style="margin-top: 50px;">Ce jour là, vous avez commandé {{c.commande.films.length}} film(s):</p>
                 <div class="w3-content w3-margin w3-padding">
                     <div *ngFor="let f of c.commande.films" class="w3-ul">
                         <li>{{f.fil_nom}}</li>
@@ -22,6 +22,7 @@
     <div *ngIf="commandes==0">
         <div class="w3-content w3-display-middle">
             <h1 class="w3-center">Aucune commande n'a été effectuée</h1>
+            <button class="w3-buttton w3-black">Commandé Maintenant</button>
         </div>
     </div>
 </div>
