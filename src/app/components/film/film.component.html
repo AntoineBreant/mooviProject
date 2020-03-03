@@ -2,7 +2,7 @@
     <button routerLink="" class="w3-btn w3-large " style="box-shadow: none; outline: none; "><i class="w3-margin fa fa-arrow-left "></i> Revenir à la liste des films</button>
     <div class="w3-content " style="padding-top: 1%;max-width:94% ">
         <h1 class="w3-padding "><b>{{film.fil_nom}}</b></h1>
-        <div  class="w3-row ">
+        <div class="w3-row ">
             <div class="w3-col l3 s4 w3-margin ">
                 <img class="w3-image w3-card-4 w3-round " style="width:100%;max-width:300px " src="{{film.fil_bandeAnnonce}} " />
             </div>
@@ -14,16 +14,28 @@
                 </p>
 
                 <div>
-                    <b class="w3-margin-right w3-large ">Durée :</b> {{film.fil_duree}}
+                    <b class="w3-large ">Acteur : </b>
+                    <span *ngFor="let a of film.act_nom">
+                         {{a}},
+                    </span>
                 </div>
                 <div>
-                    <b class="w3-margin-right w3-large ">Année :</b> {{film.fil_dateSortie | date:'dd/MM/yyyy'}}
+                    <b class="w3-large">Réalisateur : </b> {{film.fil_realisateur}}
                 </div>
                 <div>
-                    <b class="w3-margin-right w3-large ">Genre :</b> Drame
+                    <b class="w3-large">Genre : </b>
+                    <span class="w3-tag" style="margin-left: 4px; background-color: darkorange;" *ngFor="let g of film.gen_nom">
+                        {{g}}
+                    </span>
                 </div>
                 <div>
-                    <b class="w3-margin-right w3-large ">Note :</b> {{film.fil_noteMoyenne}}
+                    <b class="w3-large ">Durée : </b> {{film.fil_duree}} minutes
+                </div>
+                <div>
+                    <b class="w3-large ">Année : </b> {{film.fil_dateSortie | date: 'longDate': undefined : 'fr'}}
+                </div>
+                <div>
+                    <b class="w3-large ">Note : </b> {{film.fil_noteMoyenne}}
                 </div>
                 <button *ngIf="connection" (click)="ajoutPanier() " class="w3-btn w3-green w3-large w3-margin-top w3-margin-right">Ajouter au panier <i class="w3-margin-left fa fa-shopping-cart "></i></button>
                 <button *ngIf="connection" class="w3-btn w3-theme w3-large w3-margin-top"><a href="../../../assets/film.mp4" download>Telechargement</a> <i class="w3-margin-left fa fa-cloud-download"></i></button>

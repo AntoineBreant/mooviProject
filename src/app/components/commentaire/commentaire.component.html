@@ -21,10 +21,11 @@
         <button mat-raised-button color="primary" type="submit">Valider</button>
     </form>
     <mat-list style="height:500px;overflow:auto;">
-        <div *ngFor="let c of comments | async">
-            <b>{{c.cli_pseudo}}</b> {{c.com_date}} {{c.com_note}} <img src="assets/star-regular.svg" style="height: 10px;">
-            <div style="text-align: justify;"></div>{{c.com_texte}}
-            <br>
+        <div *ngFor="let c of comments | async" class="w3-display-container">
+            <b><i class="fa fa-user" aria-hidden="true"></i> {{c.cli_pseudo}}</b>
+            <div class="w3-display-topright">{{c.com_date | date: 'longDate': undefined : 'fr'}}</div>
+            <div class="w3-margin-top" style="text-align: justify;"></div>{{c.com_texte}}
+            <div class="w3-display-bottomright">{{c.com_note}} <i class="fa fa-star" aria-hidden="true"></i></div>
             <mat-divider></mat-divider>
         </div>
     </mat-list>
