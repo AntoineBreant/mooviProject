@@ -27,12 +27,12 @@
                         <p class="w3-margin-top w3-margin-bottom" style="text-align: justify;">{{f.fil_resume}}</p>
                         <!-- TO DO rajouter les genres-->
                         <div><b class="w3-margin-right">Genre :</b>
-                            <span class="w3-tag" style="margin-left: 4px; background-color: darkorange;" *ngFor="let g of f.genre">
+                            <span class="w3-tag" style="margin-left: 4px; background-color: darkorange; border-radius: 5px;" *ngFor=" let g of f.genre ">
                                 {{g.gen_nom}}
                             </span>
                         </div>
-                        <p><b class="w3-margin-right">Note :</b>{{f.fil_noteMoyenne}}</p>
-                        <button routerLink="film/{{f.fil_idFilm}}" class="w3-btn w3-theme w3-large w3-display-bottomright w3-margin-left">Voir plus<i class="w3-margin-left fa fa-eye"></i></button>
+                        <p><b class="w3-margin-right ">Note :</b>{{f.fil_noteMoyenne}}</p>
+                        <button routerLink="film/{{f.fil_idFilm}} " class="w3-btn w3-theme w3-large w3-display-bottomright w3-margin-left ">Voir plus<i class="w3-margin-left fa fa-eye "></i></button>
                     </div>
                 </li>
             </div>

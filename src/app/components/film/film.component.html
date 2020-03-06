@@ -1,5 +1,5 @@
 <div *ngIf="film ">
-    <button routerLink="" class="w3-btn w3-large " style="box-shadow: none; outline: none; "><i class="w3-margin fa fa-arrow-left "></i> Revenir à la liste des films</button>
+    <button routerLink="" class="w3-btn w3-large " style="box-shadow: none; outline: none; "><i class="w3-margin fa fa-arrow-left"></i> Revenir à la liste des films</button>
     <div class="w3-content " style="padding-top: 1%;max-width:94% ">
         <h1 class="w3-padding "><b>{{film.fil_nom}}</b></h1>
         <div class="w3-row ">
@@ -24,7 +24,7 @@
                 </div>
                 <div>
                     <b class="w3-large">Genre : </b>
-                    <span class="w3-tag" style="margin-left: 4px; background-color: darkorange;" *ngFor="let g of film.gen_nom">
+                    <span class="w3-tag" style="margin-left: 4px; background-color: darkorange; border-radius: 5px" *ngFor="let g of film.gen_nom">
                         {{g}}
                     </span>
                 </div>
@@ -45,9 +45,6 @@
         </div>
         <div *ngIf="ajouter" class="w3-panel w3-green w3-border w3-display-container w3-animate-zoom" style="width: 40%;">
             <p class="w3-margin">Le film a bien été ajouté à votre panier</p><span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span>
-        </div>
-        <div *ngIf="telechargement" class="w3-panel w3-theme w3-border w3-display-container w3-animate-zoom" style="width: 40%;">
-            <p class="w3-margin">Le film a bien été télécharger</p><span onclick="this.parentElement.style.display='none'" class="w3-button w3-transparent w3-display-right">&times;</span>
         </div>
     </div>
 </div>

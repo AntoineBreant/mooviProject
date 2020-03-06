@@ -1,9 +1,8 @@
 <div class="w3-bar-block" style="height:856px; position:fixed">
     <div href="#" class="w3-bar-item w3-large w3-margin-top" style="font-weight:bold">Filtres de recherche :</div>
-    <button (click)="filterByGenre(null);filterByDate(null)" class="w3-button" style="margin: 15px;
+    <button (click)="filterByGenre(null);filterByDate(null)" class="w3-button w3-theme-dark " style="margin: 15px;
     margin-top: initial;
     margin-bottom: initial;
-    background-color: darkorange;
     color: white;" *ngIf="isFiltre">Annuler la recherche</button>
     <div href=" #genre " class="w3-bar-item w3-margin-top " style="font-weight:bold ">Genre :</div>
     <ul *ngFor="let g of genre " class="w3-ul ">

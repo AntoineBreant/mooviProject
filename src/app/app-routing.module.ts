@@ -12,8 +12,8 @@ import { CommandesComponent } from './components/commandes/commandes.component';
 
 const routes: Routes = [
   {path: '', component: PagePrincipaleComponent},
-  { path: 'film/:filmId', component: FilmComponent },
-  { path: 'login', component: LoginUserComponent},
+  {path: 'film/:filmId', component: FilmComponent },
+  {path: 'login', component: LoginUserComponent},
   {path: 'panier', component: PanierComponent},
   {path: 'commandes', component: CommandesComponent},
   {path: 'inscription', component: RegisterComponent}
